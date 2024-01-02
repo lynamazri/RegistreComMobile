@@ -44,16 +44,20 @@ public class MainActivity extends AppCompatActivity {
         String password = editTextPassword.getText().toString();
 
         DatabaseHandler db = new DatabaseHandler(this);
-        User user = db.getUserByUsername(username);
 
-        if (user != null && user.getPassword().equals(password)) {
+
+        if (isValidCredentials(username, password)) {
+            User user = db.getUserByUsername(username);
+            if(user != null && user.getPassword().equals(password)) {
             showToast("Login successful");
             Intent intent = new Intent(this, HomeActivity.class);
             intent.putExtra("USERNAME_EXTRA", username);
             startActivity(intent);
-            //finish();
+            } else {
+                showToast("Invalid credentials");
+            }
         } else {
-            showToast("Invalid credentials");
+            showToast("Fields cannot be empty");
         }
     }
 
