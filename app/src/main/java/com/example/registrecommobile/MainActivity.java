@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
             // Navigate to HomeActivity
             Intent intent = new Intent(this, HomeActivity.class);
+            intent.putExtra("USERNAME_EXTRA", user.getUsername());
             startActivity(intent);
-            finish(); // Close the current activity to prevent going back to the login screen
         } else {
             showToast("Invalid credentials");
         }
