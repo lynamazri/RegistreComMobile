@@ -43,17 +43,15 @@ public class MainActivity extends AppCompatActivity {
         String username = editTextUsername.getText().toString();
         String password = editTextPassword.getText().toString();
 
-        // Fetch user from the database based on the entered username
         DatabaseHandler db = new DatabaseHandler(this);
         User user = db.getUserByUsername(username);
 
         if (user != null && user.getPassword().equals(password)) {
             showToast("Login successful");
-
-            // Navigate to HomeActivity
             Intent intent = new Intent(this, HomeActivity.class);
-            intent.putExtra("USERNAME_EXTRA", user.getUsername());
+            intent.putExtra("USERNAME_EXTRA", username);
             startActivity(intent);
+            //finish();
         } else {
             showToast("Invalid credentials");
         }
@@ -61,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void onSignUpClick() {
-
         Intent intent = new Intent(this, SignUpActivity.class);
         startActivity(intent);
     }

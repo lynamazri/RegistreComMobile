@@ -38,17 +38,15 @@ public class SignUpActivity extends AppCompatActivity {
         String confirmPassword = editTextConfirmPassword.getText().toString();
 
         if (validateInput(username, password, confirmPassword)) {
-            // Check if the username is already taken
+
             DatabaseHandler db = new DatabaseHandler(this);
             if (db.getUserByUsername(username) == null) {
-                // Username is available, proceed with sign-up
                 User newUser = new User(username, password);
                 db.addUser(newUser);
                 showToast("Sign up successful");
 
-                // Navigate to HomeActivity
                 Intent intent = new Intent(this, HomeActivity.class);
-                intent.putExtra("USERNAME_EXTRA", newUser.getUsername());
+                intent.putExtra("USERNAME_EXTRA", username);
                 startActivity(intent);
             } else {
                 showToast("Username is already taken");
@@ -58,7 +56,6 @@ public class SignUpActivity extends AppCompatActivity {
 
 
     private boolean validateInput(String username, String password, String confirmPassword) {
-        // Add your validation logic here
         if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             showToast("Please fill in all fields");
             return false;
@@ -68,8 +65,6 @@ public class SignUpActivity extends AppCompatActivity {
             showToast("Passwords do not match");
             return false;
         }
-
-        // You can add more validation rules as needed
 
         return true;
     }
