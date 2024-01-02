@@ -6,11 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <TextView
-        android:id="@+id/textViewWelcome"
-        android:layout_width="wrap_content"
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello."
-        tools:layout_editor_absoluteX="191dp"
-        tools:layout_editor_absoluteY="340dp" />
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/textViewWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello,"
+            android:textSize="50dp"
+            tools:layout_editor_absoluteX="191dp"
+            tools:layout_editor_absoluteY="340dp" />
+
+        <Button
+            android:id="@+id/buttonSubmitRequest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submitrequest"
+            android:background="@drawable/rectangle"
+            app:backgroundTint="@color/material_dynamic_neutral50"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/buttonViewRequestStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/viewrequeststatus"
+            android:background="@drawable/rectangle"
+            app:backgroundTint="@color/material_dynamic_neutral50"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/buttonResources"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/resources"
+            app:backgroundTint="@color/material_dynamic_neutral50"
+            android:background="@drawable/rectangle"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/buttonClientSupport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clientsupport"
+            app:backgroundTint="@color/material_dynamic_neutral50"
+            android:background="@drawable/rectangle"
+            android:layout_marginTop="16dp"/>
+    </LinearLayout>
 </RelativeLayout>

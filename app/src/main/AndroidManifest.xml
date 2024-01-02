@@ -15,6 +15,18 @@
         android:theme="@style/Theme.RegistreComMobile"
         tools:targetApi="31">
         <activity
+            android:name=".ClientSupportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResourcesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ViewRequestStatusActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SubmitRequestActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity

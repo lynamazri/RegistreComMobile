@@ -5,4 +5,8 @@
     <string name="login_button">Login</string>
     <string name="signUp_button">Sign Up</string>
     <string name="confirmpassword_hint">Confirm password</string>
+    <string name="submitrequest">Submit Request</string>
+    <string name="viewrequeststatus">View Request Status</string>
+    <string name="resources">Resources</string>
+    <string name="clientsupport">Client Support</string>
 </resources>
