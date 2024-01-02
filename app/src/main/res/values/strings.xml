@@ -4,4 +4,5 @@
     <string name="password_hint">Password</string>
     <string name="login_button">Login</string>
     <string name="signUp_button">Sign Up</string>
+    <string name="confirmpassword_hint">Confirm password</string>
 </resources>
