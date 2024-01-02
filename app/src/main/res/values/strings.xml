@@ -9,4 +9,12 @@
     <string name="viewrequeststatus">View Request Status</string>
     <string name="resources">Resources</string>
     <string name="clientsupport">Client Support</string>
+    <string name="companyname">Company Name</string>
+    <string name="companynamehint">Enter your company name</string>
+    <string name="address">Address</string>
+    <string name="addresshint">Enter your address</string>
+    <string name="typeofactivity">Type of Activity</string>
+    <string name="typeofactivityhint">Enter type of activity</string>
+    <string name="fullname">Full Name</string>
+    <string name="fullnamehint">Enter full name</string>
 </resources>
