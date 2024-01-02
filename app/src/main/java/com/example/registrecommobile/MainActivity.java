@@ -21,38 +21,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dbHelper = new DatabaseHelper(this);
-        editTextUsername = findViewById(R.id.editTextUsername);
-        editTextPassword = findViewById(R.id.editTextPassword);
-        buttonLogin = findViewById(R.id.buttonLogin);
-
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loginUser();
-            }
-        });
-    }
-
-    private void loginUser() {
-        String username = editTextUsername.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
-
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-        String query = "SELECT * FROM " + DatabaseHelper.TABLE_USERS +
-                " WHERE " + DatabaseHelper.COLUMN_USERNAME + "=? AND " +
-                DatabaseHelper.COLUMN_PASSWORD + "=?";
-        Cursor cursor = db.rawQuery(query, new String[]{username, password});
-
-        if (cursor.moveToFirst()) {
-            // Successful login
-            Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
-        } else {
-            // Invalid credentials
-            Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show();
-        }
-
-        cursor.close();
-        db.close();
-    }
+}
 }

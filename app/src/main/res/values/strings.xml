@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RegistreCom Mobile</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="signUp_button">Sign Up</string>
 </resources>
