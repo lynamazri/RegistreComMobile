@@ -13,11 +13,11 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Company Name -->
+            <!-- Company Information -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/companyname"
+                android:text="@string/companyinformation"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"/>
 
@@ -25,44 +25,42 @@
                 android:id="@+id/editTextCompanyName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/companynamehint"
+                android:hint="@string/companyname"
                 android:inputType="text"/>
-
-            <!-- Address -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/address"
-                android:textStyle="bold"
-                android:layout_marginTop="16dp"/>
 
             <EditText
                 android:id="@+id/editTextAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/addresshint"
+                android:hint="@string/address"
                 android:inputType="text"/>
 
-            <!-- Type of Activity -->
-            <TextView
+            <EditText
+                android:id="@+id/editTextPhoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/typeofactivity"
-                android:textStyle="bold"
-                android:layout_marginTop="16dp"/>
+                android:hint="@string/phonenumber"
+                android:inputType="phone"/>
+
+            <EditText
+                android:id="@+id/editTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/companyemail"
+                android:inputType="textEmailAddress"/>
 
             <EditText
                 android:id="@+id/editTextActivityType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/typeofactivityhint"
+                android:hint="@string/typeofactivity"
                 android:inputType="text"/>
 
             <!-- Personal Information -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/fullname"
+                android:text="@string/personalinfo"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"/>
 
@@ -70,8 +68,36 @@
                 android:id="@+id/editTextFullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/fullnamehint"
+                android:hint="@string/fullname"
                 android:inputType="text"/>
+
+            <EditText
+                android:id="@+id/editTextDateOfBirth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/dateofbirth"
+                android:inputType="date"/>
+
+            <EditText
+                android:id="@+id/editTextNationality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nationality"
+                android:inputType="text"/>
+
+            <EditText
+                android:id="@+id/editTextIdNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/idnumber"
+                android:inputType="text"/>
+
+            <!-- Declaration -->
+            <CheckBox
+                android:id="@+id/checkBoxDeclaration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/declaration"/>
 
             <!-- Submit Button -->
             <Button

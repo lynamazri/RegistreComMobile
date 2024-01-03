@@ -1,6 +1,7 @@
 package com.example.registrecommobile;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,17 +44,23 @@ public class SignUpActivity extends AppCompatActivity {
             if (db.getUserByUsername(username) == null) {
                 User newUser = new User(username, password);
                 db.addUser(newUser);
+                saveUserSession(newUser.getID());
                 showToast("Sign up successful");
 
                 Intent intent = new Intent(this, HomeActivity.class);
-                intent.putExtra("USERNAME_EXTRA", username);
+                //intent.putExtra("USERNAME_EXTRA", username);
                 startActivity(intent);
             } else {
                 showToast("Username is already taken");
             }
         }
     }
-
+    private void saveUserSession(int userId) {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("USER_ID", userId);
+        editor.apply();
+    }
 
     private boolean validateInput(String username, String password, String confirmPassword) {
         if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {

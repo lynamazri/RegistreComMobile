@@ -4,27 +4,39 @@ public class Request {
     private int id;
     private String companyName;
     private String address;
+    private String phoneNumber;
+    private String emailAddress;
     private String activityType;
-    private String personalInfo;
+    private String fullName;
+    private String dateOfBirth;
+    private String nationality;
+    private String idNumber;
     private int userId;
 
     public Request() {
-        // Empty constructor required by SQLite
+
     }
 
-    public Request(String companyName, String address, String activityType, String personalInfo, int userId) {
+    public Request(String companyName, String address, String phoneNumber,
+                   String emailAddress, String activityType, String fullName,
+                   String dateOfBirth, String nationality, String idNumber, int userId) {
         this.companyName = companyName;
         this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.emailAddress = emailAddress;
         this.activityType = activityType;
-        this.personalInfo = personalInfo;
+        this.fullName = fullName;
+        this.dateOfBirth = dateOfBirth;
+        this.nationality = nationality;
+        this.idNumber = idNumber;
         this.userId = userId;
     }
 
-    public int getId() {
+    public int getReqId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setReqId(int id) {
         this.id = id;
     }
 
@@ -52,12 +64,12 @@ public class Request {
         this.activityType = activityType;
     }
 
-    public String getPersonalInfo() {
-        return personalInfo;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setPersonalInfo(String personalInfo) {
-        this.personalInfo = personalInfo;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public int getUserId() {
@@ -66,5 +78,42 @@ public class Request {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+    public String getNationality() {
+        return nationality;
+    }
+    public String getIdNumber() {
+        return idNumber;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setEmailAddress(String emailAddress) {
+        this.emailAddress = emailAddress;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    public void setIdNumber(String idNumber) {
+        this.idNumber = idNumber;
     }
 }

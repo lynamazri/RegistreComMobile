@@ -1,6 +1,7 @@
 package com.example.registrecommobile;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -50,8 +51,9 @@ public class MainActivity extends AppCompatActivity {
             User user = db.getUserByUsername(username);
             if(user != null && user.getPassword().equals(password)) {
             showToast("Login successful");
+            saveUserSession(user.getID());
             Intent intent = new Intent(this, HomeActivity.class);
-            intent.putExtra("USERNAME_EXTRA", username);
+            //intent.putExtra("USERNAME_EXTRA", username);
             startActivity(intent);
             } else {
                 showToast("Invalid credentials");
@@ -61,6 +63,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void saveUserSession(int userId) {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("USER_ID", userId);
+        editor.apply();
+    }
+
+
+    private boolean isUserLoggedIn() {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE);
+        return sharedPreferences.contains("USER_ID");
+    }
 
     private void onSignUpClick() {
         Intent intent = new Intent(this, SignUpActivity.class);

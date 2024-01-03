@@ -17,4 +17,12 @@
     <string name="typeofactivityhint">Enter type of activity</string>
     <string name="fullname">Full Name</string>
     <string name="fullnamehint">Enter full name</string>
+    <string name="companyinformation">Company Information</string>
+    <string name="phonenumber">Phone Number</string>
+    <string name="companyemail">Company E-mail Address</string>
+    <string name="personalinfo">Personal Information</string>
+    <string name="dateofbirth">Date of Birth</string>
+    <string name="nationality">Nationality</string>
+    <string name="idnumber">ID Number</string>
+    <string name="declaration">I declare that all information provided is accurate and complete.</string>
 </resources>

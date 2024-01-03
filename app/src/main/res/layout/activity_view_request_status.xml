@@ -1,13 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewRequestStatusActivity">
+    android:padding="16dp">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textViewCompanyName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/viewrequeststatus"></TextView>
+        android:text="Company Name"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address"
+        android:textStyle="bold"
+        android:layout_below="@id/textViewCompanyName"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewActivityType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Activity Type"
+        android:textStyle="bold"
+        android:layout_below="@id/textViewAddress"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewPersonalInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Personal Information"
+        android:textStyle="bold"
+        android:layout_below="@id/textViewActivityType"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Add more TextViews or UI elements as needed -->
+
 </RelativeLayout>

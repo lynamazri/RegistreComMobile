@@ -1,10 +1,11 @@
 package com.example.registrecommobile;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,44 +16,58 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        String username = getIntent().getStringExtra("USERNAME_EXTRA");
+        SharedPreferences sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE);
+        int userId = sharedPreferences.getInt("USER_ID", -1);
 
-        TextView welcomeTextView = findViewById(R.id.textViewWelcome);
-        welcomeTextView.setText("Hello, " + username);
+        if (userId == -1) {
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+        }
 
-        Button submitRequestButton = findViewById(R.id.buttonSubmitRequest);
-        Button viewRequestStatusButton = findViewById(R.id.buttonViewRequestStatus);
-        Button resourcesButton = findViewById(R.id.buttonResources);
-        Button clientSupportButton = findViewById(R.id.buttonClientSupport);
+        DatabaseHandler db = new DatabaseHandler(this);
+        User user = db.getUserById(userId);
 
-        // Set onClickListeners for each button
-        submitRequestButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, SubmitRequestActivity.class));
-            }
-        });
+        if (user != null) {
+            String username = user.getUsername();
 
-        viewRequestStatusButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, ViewRequestStatusActivity.class));
-            }
-        });
+            TextView welcomeTextView = findViewById(R.id.textViewWelcome);
+            welcomeTextView.setText("Hello, " + username);
 
-        resourcesButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, ResourcesActivity.class));
-            }
-        });
+            Button submitRequestButton = findViewById(R.id.buttonSubmitRequest);
+            Button viewRequestStatusButton = findViewById(R.id.buttonViewRequestStatus);
+            Button resourcesButton = findViewById(R.id.buttonResources);
+            Button clientSupportButton = findViewById(R.id.buttonClientSupport);
 
-        clientSupportButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, ClientSupportActivity.class));
-            }
-        });
 
+            submitRequestButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(HomeActivity.this, SubmitRequestActivity.class));
+                }
+            });
+
+            viewRequestStatusButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(HomeActivity.this, ViewRequestStatusActivity.class));
+                }
+            });
+
+            resourcesButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(HomeActivity.this, ResourcesActivity.class));
+                }
+            });
+
+            clientSupportButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(HomeActivity.this, ClientSupportActivity.class));
+                }
+            });
+        } else {
+            startActivity(new Intent(HomeActivity.this, MainActivity.class));
+        }
     }
 }
