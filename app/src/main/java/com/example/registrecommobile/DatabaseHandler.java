@@ -12,9 +12,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "mydb";
     private static final String TABLE_USERS = "users";
+    private static final String TABLE_REQUESTS = "requests";
     private static final String KEY_ID = "id";
     private static final String KEY_USERNAME = "username";
     private static final String KEY_PASS = "password";
+    private static final String KEY_COMPANY_NAME = "company_name";
+    private static final String KEY_ADDRESS = "address";
+    private static final String KEY_ACTIVITY_TYPE = "activity_type";
+    private static final String KEY_PERSONAL_INFO = "personal_info";
+    private static final String KEY_USER_ID = "user_id";
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
@@ -26,12 +32,25 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_USERNAME + " TEXT,"
                 + KEY_PASS + " TEXT" + ")";
         db.execSQL(CREATE_CONTACTS_TABLE);
+
+        String CREATE_REQUESTS_TABLE = "CREATE TABLE " + TABLE_REQUESTS + "("
+                + KEY_ID + " INTEGER PRIMARY KEY,"
+                + KEY_COMPANY_NAME + " TEXT,"
+                + KEY_ADDRESS + " TEXT,"
+                + KEY_ACTIVITY_TYPE + " TEXT,"
+                + KEY_PERSONAL_INFO + " TEXT,"
+                + KEY_USER_ID + " INTEGER,"
+                + " FOREIGN KEY (" + KEY_USER_ID + ") REFERENCES " + TABLE_USERS + "(" + KEY_ID + "))";
+        db.execSQL(CREATE_REQUESTS_TABLE);
     }
+
+
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_USERS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_REQUESTS);
 
         onCreate(db);
 
@@ -106,4 +125,84 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 new String[] { String.valueOf(user.getID()) });
         db.close();
     }
+
+    void addRequest(Request request) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_COMPANY_NAME, request.getCompanyName());
+        values.put(KEY_ADDRESS, request.getAddress());
+        values.put(KEY_ACTIVITY_TYPE, request.getActivityType());
+        values.put(KEY_PERSONAL_INFO, request.getPersonalInfo());
+        values.put(KEY_USER_ID, request.getUserId());
+
+        db.insert(TABLE_REQUESTS, null, values);
+        db.close();
+    }
+
+    public int updateRequest(Request request) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(KEY_COMPANY_NAME, request.getCompanyName());
+        values.put(KEY_ADDRESS, request.getAddress());
+        values.put(KEY_ACTIVITY_TYPE, request.getActivityType());
+        values.put(KEY_PERSONAL_INFO, request.getPersonalInfo());
+        values.put(KEY_USER_ID, request.getUserId());
+
+        return db.update(TABLE_REQUESTS, values, KEY_ID + " = ?",
+                new String[]{String.valueOf(request.getId())});
+    }
+
+    public List<Request> getAllRequests() {
+        List<Request> requestList = new ArrayList<>();
+
+        String selectQuery = "SELECT * FROM " + TABLE_REQUESTS;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Request request = new Request();
+                request.setId(Integer.parseInt(cursor.getString(0)));
+                request.setCompanyName(cursor.getString(1));
+                request.setAddress(cursor.getString(2));
+                request.setActivityType(cursor.getString(3));
+                request.setPersonalInfo(cursor.getString(4));
+                request.setUserId(Integer.parseInt(cursor.getString(5)));
+
+                requestList.add(request);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        return requestList;
+    }
+
+    public List<Request> getRequestsByUserId(int userId) {
+        List<Request> requestList = new ArrayList<>();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.query(TABLE_REQUESTS, null, KEY_USER_ID + "=?",
+                new String[]{String.valueOf(userId)}, null, null, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                Request request = new Request();
+                request.setId(Integer.parseInt(cursor.getString(0)));
+                request.setCompanyName(cursor.getString(1));
+                request.setAddress(cursor.getString(2));
+                request.setActivityType(cursor.getString(3));
+                request.setPersonalInfo(cursor.getString(4));
+                request.setUserId(Integer.parseInt(cursor.getString(5)));
+
+                requestList.add(request);
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        return requestList;
+    }
+
+
+
 }
