@@ -12,6 +12,7 @@ public class Request {
     private String nationality;
     private String idNumber;
     private int userId;
+    private String state;
 
     public Request() {
 
@@ -19,7 +20,7 @@ public class Request {
 
     public Request(String companyName, String address, String phoneNumber,
                    String emailAddress, String activityType, String fullName,
-                   String dateOfBirth, String nationality, String idNumber, int userId) {
+                   String dateOfBirth, String nationality, String idNumber, int userId, String state) {
         this.companyName = companyName;
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -30,6 +31,7 @@ public class Request {
         this.nationality = nationality;
         this.idNumber = idNumber;
         this.userId = userId;
+        this.state = state;
     }
 
     public int getReqId() {
@@ -115,5 +117,13 @@ public class Request {
 
     public void setIdNumber(String idNumber) {
         this.idNumber = idNumber;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }

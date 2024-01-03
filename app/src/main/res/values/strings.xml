@@ -25,4 +25,7 @@
     <string name="nationality">Nationality</string>
     <string name="idnumber">ID Number</string>
     <string name="declaration">I declare that all information provided is accurate and complete.</string>
+    <string name="logout">Logout</string>
+    <string name="state">State</string>
+    <string name="requestid">Request ID</string>
 </resources>

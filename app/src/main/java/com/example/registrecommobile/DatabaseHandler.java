@@ -27,6 +27,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_EMAIL_ADDRESS = "email_address";
     private static final String KEY_NATIONALITY = "nationality";
     private static final String KEY_ID_NUMBER = "id_number";
+    private static final String KEY_STATE = "state";
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
 
@@ -50,6 +51,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_DATE_OF_BIRTH + " TEXT,"
                 + KEY_NATIONALITY + " TEXT,"
                 + KEY_ID_NUMBER + " TEXT,"
+                + KEY_STATE + " TEXT,"
                 + KEY_USER_ID + " INTEGER,"
                 + " FOREIGN KEY (" + KEY_USER_ID + ") REFERENCES " + TABLE_USERS + "(" + KEY_ID + "))";
         db.execSQL(CREATE_REQUESTS_TABLE);
@@ -175,6 +177,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_DATE_OF_BIRTH, request.getDateOfBirth());
         values.put(KEY_NATIONALITY, request.getNationality());
         values.put(KEY_ID_NUMBER, request.getIdNumber());
+        values.put(KEY_STATE, request.getState());
         values.put(KEY_USER_ID, request.getUserId());
 
         if (cursor != null && cursor.moveToFirst()) {
@@ -206,6 +209,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_DATE_OF_BIRTH, request.getDateOfBirth());
         values.put(KEY_NATIONALITY, request.getNationality());
         values.put(KEY_ID_NUMBER, request.getIdNumber());
+        values.put(KEY_STATE, request.getState());
         values.put(KEY_USER_ID, request.getUserId());
 
 
@@ -237,7 +241,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 request.setDateOfBirth(cursor.getString(7));
                 request.setNationality(cursor.getString(8));
                 request.setIdNumber(cursor.getString(9));
-                request.setUserId(Integer.parseInt(cursor.getString(10)));
+                request.setState(cursor.getString(10));
+                request.setUserId(Integer.parseInt(cursor.getString(11)));
 
                 requestList.add(request);
             } while (cursor.moveToNext());
@@ -269,7 +274,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             request.setDateOfBirth(cursor.getString(7));
             request.setNationality(cursor.getString(8));
             request.setIdNumber(cursor.getString(9));
-            request.setUserId(Integer.parseInt(cursor.getString(10)));
+            request.setState(cursor.getString(10));
+            request.setUserId(Integer.parseInt(cursor.getString(11)));
         }
 
 
@@ -300,7 +306,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             request.setDateOfBirth(cursor.getString(7));
             request.setNationality(cursor.getString(8));
             request.setIdNumber(cursor.getString(9));
-            request.setUserId(Integer.parseInt(cursor.getString(10)));
+            request.setState(cursor.getString(10));
+            request.setUserId(Integer.parseInt(cursor.getString(11)));
         }
 
 

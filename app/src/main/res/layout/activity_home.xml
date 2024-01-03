@@ -59,5 +59,14 @@
             app:backgroundTint="@color/material_dynamic_neutral50"
             android:background="@drawable/rectangle"
             android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/buttonLogout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/logout"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center"/>
     </LinearLayout>
+
 </RelativeLayout>

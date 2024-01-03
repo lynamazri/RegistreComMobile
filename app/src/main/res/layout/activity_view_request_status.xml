@@ -1,44 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:gravity="center_vertical"
+    tools:context=".ViewRequestStatusActivity">
+
+
+    <TextView
+        android:id="@+id/textViewRequestId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/requestid"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"/>
 
     <TextView
         android:id="@+id/textViewCompanyName"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Company Name"
+        android:text="@string/companyname"
+        android:textSize="16sp"
+        android:layout_below="@id/textViewRequestId"
         android:textStyle="bold"
+        android:layout_marginBottom="8dp"
         android:layout_marginTop="16dp"/>
 
     <TextView
         android:id="@+id/textViewAddress"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Address"
+        android:text="@string/address"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:layout_below="@id/textViewCompanyName"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/textViewEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/companyemail"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/textViewAddress"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/textViewPhoneNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phonenumber"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/textViewEmailAddress"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
         android:id="@+id/textViewActivityType"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Activity Type"
+        android:text="@string/typeofactivity"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:layout_below="@id/textViewAddress"
-        android:layout_marginTop="16dp"/>
+        android:layout_below="@id/textViewPhoneNumber"
+        android:layout_marginBottom="8dp"/>
 
     <TextView
-        android:id="@+id/textViewPersonalInfo"
-        android:layout_width="match_parent"
+        android:id="@+id/textViewFullName"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Personal Information"
+        android:text="@string/fullname"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:layout_below="@id/textViewActivityType"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginBottom="8dp"/>
 
-    <!-- Add more TextViews or UI elements as needed -->
+    <TextView
+        android:id="@+id/textViewDateOfBirth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dateofbirth"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/textViewFullName"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/textViewNationality"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nationality"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/textViewDateOfBirth"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/textViewIdNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/idnumber"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/textViewNationality"
+        android:layout_marginBottom="8dp"/>
+
+
+
+    <TextView
+        android:id="@+id/textViewState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/state"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_below="@id/textViewIdNumber"
+        android:layout_marginTop="16dp"/>
 
 </RelativeLayout>

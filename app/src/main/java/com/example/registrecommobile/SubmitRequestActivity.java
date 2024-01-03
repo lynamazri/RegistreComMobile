@@ -1,4 +1,6 @@
 package com.example.registrecommobile;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -44,6 +46,18 @@ public class SubmitRequestActivity extends AppCompatActivity {
 
     private void onSubmitRequest() {
 
+
+        SharedPreferences sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE);
+        int userId = sharedPreferences.getInt("USER_ID", -1);
+
+        if (userId == -1) {
+            showToast("User session expired. Please log in again.");
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+            return;
+        }
+
+
         String companyName = editTextCompanyName.getText().toString();
         String address = editTextAddress.getText().toString();
         String phoneNumber = editTextPhoneNumber.getText().toString();
@@ -63,13 +77,23 @@ public class SubmitRequestActivity extends AppCompatActivity {
             showToast("Please fill in all mandatory fields and accept the declaration.");
             return;
         }
+        DatabaseHandler db = new DatabaseHandler(this);
+        Request existingRequest = db.getRequestByUserId(userId);
+        if (existingRequest != null) {
+            showToast("Cannot submit another request. You already have a pending request.");
+            return;
+        }
 
-        // TODO: Implement the logic to store the request in the database
-        // You can use the DatabaseHandler class to add the request
+        Request newRequest = new Request(companyName, address, phoneNumber, emailAddress,
+                activityType, fullName, dateOfBirth, nationality, idNumber, userId, "Submitted");
+
+
+        db.addRequest(newRequest);
 
         showToast("Request submitted successfully");
-        finish(); // Optional: finish the current activity if needed
+        finish();
     }
+
 
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
