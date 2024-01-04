@@ -28,4 +28,21 @@
     <string name="logout">Logout</string>
     <string name="state">State</string>
     <string name="requestid">Request ID</string>
+    <string name="faq_question_1">What is the purpose of your application?</string>
+    <string name="faq_question_2">How can I submit a request?</string>
+    <string name="faq_question_3">What information do I need to provide when submitting a request?</string>
+    <string name="faq_question_4">How long does it take to process a request?</string>
+    <string name="faq_question_5">Can I edit my submitted request?</string>
+
+    <string name="faq_answer_1">The purpose of our application is to streamline the process of submitting and managing requests for various purposes.</string>
+    <string name="faq_answer_2">You can submit a request by navigating to the "Submit Request" section and filling out the required form.</string>
+    <string name="faq_answer_3">When submitting a request, you will need to provide information such as company details, personal information, and specific details related to your request type.</string>
+    <string name="faq_answer_4">The processing time for a request may vary, and you will be notified once your request is processed.</string>
+    <string name="faq_answer_5">Once a request is submitted, you cannot directly edit it. If you need to make changes, please contact our support team.</string>
+
+    <string name="advice1">Ensure all required fields are filled out.</string>
+    <string name="advice2">Double-check your contact information for accuracy.</string>
+    <string name="advice3">Provide detailed and clear information in each field.</string>
+    <string name="advice4">Follow any specific instructions provided for each form.</string>
+    <string name="advice5">Review your entries before submitting to avoid errors.</string>
 </resources>

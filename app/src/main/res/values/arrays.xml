@@ -1,14 +1,45 @@
 <resources>
-    <string-array name="resource_categories">
-        <item>FAQ</item>
-        <item>Advice for Filling Forms</item>
-        <item>Other Resources</item>
+    <string-array name="faq_questions">
+        <item>@string/faq_question_1</item>
+        <item>@string/faq_question_2</item>
+        <item>@string/faq_question_3</item>
+        <item>@string/faq_question_4</item>
+        <item>@string/faq_question_5</item>
     </string-array>
 
-    <!-- Placeholder items for demonstration -->
-    <string-array name="placeholder_items">
-        <item>Item 1</item>
-        <item>Item 2</item>
-        <item>Item 3</item>
+    <string-array name="faq_answers">
+        <item>@string/faq_answer_1</item>
+        <item>@string/faq_answer_2</item>
+        <item>@string/faq_answer_3</item>
+        <item>@string/faq_answer_4</item>
+        <item>@string/faq_answer_5</item>
     </string-array>
+
+    <string-array name="advice_list">
+        <item>@string/advice1</item>
+        <item>@string/advice2</item>
+        <item>@string/advice3</item>
+        <item>@string/advice4</item>
+        <item>@string/advice5</item>
+    </string-array>
+
+    <string-array name="other_resources_titles">
+        <item>@string/res1</item>
+        <item>@string/res2</item>
+        <item>@string/res3</item>
+
+    </string-array>
+
+    <string-array name="other_resources_links">
+        <item>@string/link1</item>
+        <item>@string/link2</item>
+        <item>@string/link3</item>
+
+    </string-array>
+    <string name="res1">Official Website</string>
+    <string name="res2">Help Center</string>
+    <string name="res3">Community Forum</string>
+    <string name="link1">https://www.example.com</string>
+    <string name="link2">https://help.example.com</string>
+    <string name="link3">https://forum.example.com</string>
 </resources>
