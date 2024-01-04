@@ -46,7 +46,7 @@ public class ViewRequestStatusActivity extends AppCompatActivity {
 
         if (userId != -1) {
 
-            Request userRequest = db.getRequestByUserId(userId);
+            Request userRequest = db.getRequestById(1);
 
 
             if (userRequest != null) {

@@ -43,12 +43,15 @@ public class HomeActivity extends AppCompatActivity {
             Button logoutButton = findViewById(R.id.buttonLogout);
 
 
+
             submitRequestButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     startActivity(new Intent(HomeActivity.this, SubmitRequestActivity.class));
                 }
             });
+
+
 
             viewRequestStatusButton.setOnClickListener(new View.OnClickListener() {
                 @Override
