@@ -164,8 +164,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     void addRequest(Request request) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.query(TABLE_REQUESTS, null, KEY_USER_ID + "=?",
-                new String[]{String.valueOf(request.getUserId())}, null, null, null);
+        Cursor cursor = db.query(TABLE_REQUESTS, null, KEY_USER_ID + "=? AND " + KEY_STATE + "!=?",
+                new String[]{String.valueOf(request.getUserId()), "Rejected"}, null, null, null);
 
         ContentValues values = new ContentValues();
         values.put(KEY_COMPANY_NAME, request.getCompanyName());
@@ -182,8 +182,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
         if (cursor != null && cursor.moveToFirst()) {
 
-            db.update(TABLE_REQUESTS, values, KEY_USER_ID + "=?",
-                    new String[]{String.valueOf(request.getUserId())});
+            db.update(TABLE_REQUESTS, values, KEY_USER_ID + "=? AND " + KEY_STATE + "!=?",
+                    new String[]{String.valueOf(request.getUserId()), "Rejected"});
         } else {
 
             db.insert(TABLE_REQUESTS, null, values);
@@ -194,6 +194,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
         db.close();
     }
+
 
 
     public int updateRequest(Request request) {
