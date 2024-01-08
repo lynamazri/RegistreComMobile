@@ -11,101 +11,149 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:orientation="vertical">
 
-            <!-- Company Information -->
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/companyinformation"
+                android:textColor="@color/brand_blue"
+                android:textSize="25sp"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"/>
 
             <EditText
                 android:id="@+id/editTextCompanyName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
+                android:background="@drawable/custom_edittext2"
                 android:hint="@string/companyname"
+                android:layout_marginTop="20dp"
+                android:drawablePadding="8dp"
+                android:padding="5dp"
                 android:inputType="text"/>
 
             <EditText
                 android:id="@+id/editTextAddress"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:drawablePadding="8dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
                 android:hint="@string/address"
+                android:padding="5dp"
+                android:background="@drawable/custom_edittext2"
                 android:inputType="text"/>
 
             <EditText
                 android:id="@+id/editTextPhoneNumber"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
+                android:drawablePadding="8dp"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:background="@drawable/custom_edittext2"
                 android:hint="@string/phonenumber"
                 android:inputType="phone"/>
 
             <EditText
                 android:id="@+id/editTextEmailAddress"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_edittext2"
                 android:hint="@string/companyemail"
+                android:drawablePadding="8dp"
                 android:inputType="textEmailAddress"/>
 
             <EditText
                 android:id="@+id/editTextActivityType"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="8dp"
+                android:background="@drawable/custom_edittext2"
                 android:hint="@string/typeofactivity"
                 android:inputType="text"/>
 
-            <!-- Personal Information -->
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/personalinfo"
+                android:textSize="25sp"
+                android:textColor="@color/brand_blue"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"/>
 
             <EditText
                 android:id="@+id/editTextFullName"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:hint="@string/fullname"
+                android:drawablePadding="8dp"
+                android:layout_marginTop="20dp"
+                android:padding="5dp"
+                android:background="@drawable/custom_edittext2"
                 android:inputType="text"/>
 
             <EditText
                 android:id="@+id/editTextDateOfBirth"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
+                android:drawablePadding="8dp"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
                 android:hint="@string/dateofbirth"
+                android:background="@drawable/custom_edittext2"
                 android:inputType="date"/>
 
             <EditText
                 android:id="@+id/editTextNationality"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
+                android:padding="5dp"
+                android:drawablePadding="8dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_edittext2"
                 android:hint="@string/nationality"
                 android:inputType="text"/>
 
             <EditText
                 android:id="@+id/editTextIdNumber"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
+                android:padding="5dp"
+                android:drawablePadding="8dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_edittext2"
                 android:hint="@string/idnumber"
                 android:inputType="text"/>
 
-            <!-- Declaration -->
+
             <CheckBox
                 android:id="@+id/checkBoxDeclaration"
                 android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_height="wrap_content"
                 android:text="@string/declaration"/>
 
-            <!-- Submit Button -->
+
             <Button
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
                 android:id="@+id/buttonSubmitRequest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/submitrequest"
-                android:layout_marginTop="16dp"/>
+                android:onClick="onSignUpClick"
+                android:textSize="18sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/brand_green"
+                />
+
         </LinearLayout>
     </ScrollView>
 

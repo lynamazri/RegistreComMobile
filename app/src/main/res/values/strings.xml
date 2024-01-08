@@ -45,4 +45,5 @@
     <string name="advice3">Provide detailed and clear information in each field.</string>
     <string name="advice4">Follow any specific instructions provided for each form.</string>
     <string name="advice5">Review your entries before submitting to avoid errors.</string>
+    <string name="login_button_back">Back to Login</string>
 </resources>

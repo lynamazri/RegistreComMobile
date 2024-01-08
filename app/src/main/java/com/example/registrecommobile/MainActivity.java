@@ -50,11 +50,11 @@ public class MainActivity extends AppCompatActivity {
         if (isValidCredentials(username, password)) {
             User user = db.getUserByUsername(username);
             if(user != null && user.getPassword().equals(password)) {
-            showToast("Login successful");
-            saveUserSession(user.getID());
-            Intent intent = new Intent(this, HomeActivity.class);
-            //intent.putExtra("USERNAME_EXTRA", username);
-            startActivity(intent);
+                showToast("Login successful");
+                saveUserSession(user.getID());
+                Intent intent = new Intent(this, HomeActivity.class);
+                //intent.putExtra("USERNAME_EXTRA", username);
+                startActivity(intent);
             } else {
                 showToast("Invalid credentials");
             }

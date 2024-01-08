@@ -1,73 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/appbkg"
+    tools:context=".MainActivity">
 
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="24dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello,"
+                android:layout_marginBottom="15dp"
+                android:id="@+id/textViewWelcome"
+                android:textSize="36sp"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textColor="@color/brand_blue"
+                android:gravity="center_horizontal" />
+
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/buttonSubmitRequest"
+                android:text="@string/submitrequest"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/brand_blue"
+                app:cornerRadius = "20dp"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/buttonViewRequestStatus"
+                android:text="@string/viewrequeststatus"
+
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/brand_blue"
+                app:cornerRadius = "20dp"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/buttonResources"
+                android:text="@string/resources"
+
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/brand_blue"
+                app:cornerRadius = "20dp"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:id="@+id/buttonClientSupport"
+                android:text="@string/clientsupport"
+
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/brand_blue"
+                app:cornerRadius = "20dp"/>
+
+        </LinearLayout>
+
+
+
+    <Button
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_centerInParent="true">
+        android:padding="8dp"
+        android:text="@string/logout"
+        android:textSize="14sp"
+        android:textAlignment="center"
+        android:id="@+id/buttonLogout"
+        android:backgroundTint="@color/brand_dark_orange"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal" />
 
-        <TextView
-            android:id="@+id/textViewWelcome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello,"
-            android:textSize="50dp"
-            tools:layout_editor_absoluteX="191dp"
-            tools:layout_editor_absoluteY="340dp" />
-
-        <Button
-            android:id="@+id/buttonSubmitRequest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/submitrequest"
-            android:background="@drawable/rectangle"
-            app:backgroundTint="@color/material_dynamic_neutral50"
-            android:layout_marginTop="16dp"/>
-
-        <Button
-            android:id="@+id/buttonViewRequestStatus"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/viewrequeststatus"
-            android:background="@drawable/rectangle"
-            app:backgroundTint="@color/material_dynamic_neutral50"
-            android:layout_marginTop="16dp"/>
-
-        <Button
-            android:id="@+id/buttonResources"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/resources"
-            app:backgroundTint="@color/material_dynamic_neutral50"
-            android:background="@drawable/rectangle"
-            android:layout_marginTop="16dp"/>
-
-        <Button
-            android:id="@+id/buttonClientSupport"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/clientsupport"
-            app:backgroundTint="@color/material_dynamic_neutral50"
-            android:background="@drawable/rectangle"
-            android:layout_marginTop="16dp"/>
-
-        <Button
-            android:id="@+id/buttonLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/logout"
-            android:layout_marginTop="16dp"
-            android:layout_gravity="center"/>
-
-    </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

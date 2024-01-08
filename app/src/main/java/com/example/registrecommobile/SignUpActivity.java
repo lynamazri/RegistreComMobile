@@ -24,11 +24,19 @@ public class SignUpActivity extends AppCompatActivity {
         editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
 
         Button buttonSignUp = findViewById(R.id.buttonSignUp);
+        Button loginButton = findViewById(R.id.buttonLogin);
 
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onSignUpClick();
+            }
+        });
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignUpActivity.this, MainActivity.class));
             }
         });
     }
