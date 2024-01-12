@@ -46,4 +46,19 @@
     <string name="advice4">Follow any specific instructions provided for each form.</string>
     <string name="advice5">Review your entries before submitting to avoid errors.</string>
     <string name="login_button_back">Back to Login</string>
+    <string name="cancelrequest">Cancel</string>
+    <string name="faqexp">If you have any questions, you might find them here</string>
+    <string name="faq">FAQ</string>
+    <string name="adviceexp">If you need advice on how to correctly fill out the forms, refer to this section</string>
+    <string name="advice">Advice</string>
+    <string name="otherresexp">Find useful links here</string>
+    <string name="otherres">Other Resources</string>
+    <string name="callexp">Call one of our expert assistants</string>
+    <string name="textexp">Or text them</string>
+    <string name="texthint">Hello, I need assistance with...</string>
+    <string name="call">✆</string>
+    <string name="text">✍︎</string>
+    <string name="workhours">** Please note that our assistance center is open Sunday to Thursday from 8am to 5pm, except on holidays.</string>
+    <string name="patience">** Phone lines can be busy sometimes, so your call might be put on hold.</string>
+    <string name="request">Request Status for Request N°</string>
 </resources>

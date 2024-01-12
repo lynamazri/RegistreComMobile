@@ -141,19 +141,37 @@
                 android:layout_height="wrap_content"
                 android:text="@string/declaration"/>
 
-
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="8dp"
+    android:orientation="horizontal">
             <Button
                 android:layout_width="wrap_content"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:id="@+id/buttonSubmitRequest"
                 android:text="@string/submitrequest"
-                android:onClick="onSignUpClick"
+
                 android:textSize="18sp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="@color/brand_green"
+                android:layout_marginRight="8dp"
                 />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:id="@+id/buttonCancelRequest"
+                android:text="@string/cancelrequest"
 
+                android:textSize="18sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="8dp"
+                android:backgroundTint="@color/brand_dark_orange"
+                />
+        </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

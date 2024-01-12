@@ -36,6 +36,15 @@ public class SubmitRequestActivity extends AppCompatActivity {
         checkBoxDeclaration = findViewById(R.id.checkBoxDeclaration);
 
         Button buttonSubmitRequest = findViewById(R.id.buttonSubmitRequest);
+        Button buttonCancelRequest = findViewById(R.id.buttonCancelRequest);
+
+        buttonCancelRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SubmitRequestActivity.this, HomeActivity.class));
+            }
+        });
+
         buttonSubmitRequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
