@@ -46,7 +46,7 @@
                 android:text="@string/companyname"
                 android:textSize="16sp"
                 android:layout_below="@id/textViewRequestId"
-                android:textStyle="bold"
+
                 android:layout_marginBottom="8dp"
                 android:layout_marginTop="16dp"/>
 
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/address"
                 android:textSize="16sp"
-                android:textStyle="bold"
+
                 android:layout_below="@id/textViewCompanyName"
                 android:layout_marginBottom="8dp"/>
 
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/companyemail"
                 android:textSize="16sp"
-                android:textStyle="bold"
+
                 android:layout_below="@id/textViewAddress"
                 android:layout_marginBottom="8dp"/>
 
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/phonenumber"
                 android:textSize="16sp"
-                android:textStyle="bold"
+
                 android:layout_below="@id/textViewEmailAddress"
                 android:layout_marginBottom="8dp"/>
 
@@ -86,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/typeofactivity"
                 android:textSize="16sp"
-                android:textStyle="bold"
+
                 android:layout_below="@id/textViewPhoneNumber"
                 android:layout_marginBottom="8dp"/>
 
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/fullname"
                 android:textSize="16sp"
-                android:textStyle="bold"
+
                 android:layout_below="@id/textViewActivityType"
                 android:layout_marginBottom="8dp"/>
 
@@ -106,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/dateofbirth"
                 android:textSize="16sp"
-                android:textStyle="bold"
+
                 android:layout_below="@id/textViewFullName"
                 android:layout_marginBottom="8dp"/>
 
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/nationality"
                 android:textSize="16sp"
-                android:textStyle="bold"
+
                 android:layout_below="@id/textViewDateOfBirth"
                 android:layout_marginBottom="8dp"/>
 
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/idnumber"
                 android:textSize="16sp"
-                android:textStyle="bold"
+
                 android:layout_below="@id/textViewNationality"
                 android:layout_marginBottom="8dp"/>
 

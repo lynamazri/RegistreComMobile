@@ -8,6 +8,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class ViewRequestStatusActivity extends AppCompatActivity {
 
@@ -63,6 +64,7 @@ public class ViewRequestStatusActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressLint("StringFormatInvalid")
     private void displayRequestDetails(Request request) {
 
         String requestNum = String.valueOf(R.string.request);
@@ -75,7 +77,7 @@ public class ViewRequestStatusActivity extends AppCompatActivity {
         String dateofbirth = String.valueOf(R.string.dateofbirth);
         String nationality = String.valueOf(R.string.nationality);
         String idnumber = String.valueOf(R.string.idnumber);
-        String state = String.valueOf(R.string.state);
+
 
 
         textViewRequestId.setText("Request Status for Request N° " + request.getReqId());
@@ -88,7 +90,22 @@ public class ViewRequestStatusActivity extends AppCompatActivity {
         textViewDateOfBirth.setText("Date of birth of applicant: " + request.getDateOfBirth());
         textViewNationality.setText("Nationality of applicant: " + request.getNationality());
         textViewIdNumber.setText("ID number of applicant: " + request.getIdNumber());
-        textViewState.setText("Request state: " + request.getState());
+        String state = request.getState();
+        textViewState.setText("Request Status: " + request.getState());
+
+        // Set text color based on the state
+        int color;
+        if ("Pending".equalsIgnoreCase(state) || "Under Review".equalsIgnoreCase(state)) {
+            color = ContextCompat.getColor(this, R.color.black);
+        } else if ("Accepted".equalsIgnoreCase(state)) {
+            color = ContextCompat.getColor(this, R.color.brand_green);
+        } else if ("Rejected".equalsIgnoreCase(state)) {
+            color = ContextCompat.getColor(this, R.color.brand_dark_orange);
+        } else {
+            color = ContextCompat.getColor(this, android.R.color.black);
+        }
+
+        textViewState.setTextColor(color);
     }
 
     private void showToast(String message) {

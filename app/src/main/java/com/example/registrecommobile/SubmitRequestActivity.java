@@ -141,6 +141,8 @@ public class SubmitRequestActivity extends AppCompatActivity {
                 showToast("Please fill in all mandatory fields and accept the declaration.");
             } else {
 
+
+
                 DatabaseHandler db = new DatabaseHandler(this);
 
                 Request existingRequest = db.getRequestByUserId(userId);

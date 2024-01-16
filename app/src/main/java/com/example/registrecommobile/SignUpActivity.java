@@ -48,6 +48,11 @@ public class SignUpActivity extends AppCompatActivity {
 
         if (validateInput(username, password, confirmPassword)) {
 
+            if (!isValidPassword(password)) {
+                showToast("Password must be between 8 and 16 characters and contain at least one number");
+                return;
+            }
+
             DatabaseHandler db = new DatabaseHandler(this);
             if (db.getUserByUsername(username) == null) {
                 User newUser = new User(username, password);
@@ -68,6 +73,21 @@ public class SignUpActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putInt("USER_ID", userId);
         editor.apply();
+    }
+
+    private boolean isValidPassword(String password) {
+
+        return password.length() >= 8 && password.length() <= 16 && containsNumber(password);
+    }
+
+    private boolean containsNumber(String str) {
+
+        for (char c : str.toCharArray()) {
+            if (Character.isDigit(c)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private boolean validateInput(String username, String password, String confirmPassword) {
