@@ -65,4 +65,6 @@
     <string name="examen">En cours d\'examen : la demande est en cours d\'examen.</string>
     <string name="accepted">Accepté : la demande a été approuvée. Merci de vous rendre auprès des autorités concernées pour récupérer votre registre.</string>
     <string name="rejected">Rejeté : la demande a été rejetée. Veuillez vous rendre dans la section « Contact » pour plus d\'informations.</string>
+    <string name="pdf">Soumettre des documents</string>
+    <string name="choosepdf">Choisissez un fichier PDF</string>
 </resources>

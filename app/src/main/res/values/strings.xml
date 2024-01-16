@@ -65,4 +65,6 @@
     <string name="examen">Under Review: Request is being reviewed.</string>
     <string name="accepted">Accepted: Request has been approved. Please head to the concerned authorities to collect your register.</string>
     <string name="rejected">Rejected: Request has been rejected. Please head over to the \'Contact\' section for further inquiries.</string>
+    <string name="pdf">Upload Documents</string>
+    <string name="choosepdf">Choose PDF File</string>
 </resources>
