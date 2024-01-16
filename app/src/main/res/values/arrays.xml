@@ -39,7 +39,7 @@
     <string name="res1">Official Website</string>
     <string name="res2">Help Center</string>
     <string name="res3">Community Forum</string>
-    <string name="link1">https://www.example.com</string>
-    <string name="link2">https://help.example.com</string>
-    <string name="link3">https://forum.example.com</string>
+    <string name="link1" translatable="false">https://www.example.com</string>
+    <string name="link2" translatable="false">https://help.example.com</string>
+    <string name="link3" translatable="false">https://forum.example.com</string>
 </resources>

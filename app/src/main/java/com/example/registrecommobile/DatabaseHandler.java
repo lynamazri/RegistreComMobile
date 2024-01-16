@@ -10,7 +10,7 @@ import java.util.List;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "mydb";
+    private static final String DATABASE_NAME = "ourdb";
     private static final String TABLE_USERS = "users";
     private static final String TABLE_REQUESTS = "requests";
     private static final String KEY_ID = "id";
@@ -162,38 +162,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    void addRequest(Request request) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.query(TABLE_REQUESTS, null, KEY_USER_ID + "=? AND " + KEY_STATE + "!=?",
-                new String[]{String.valueOf(request.getUserId()), "Rejected"}, null, null, null);
 
-        ContentValues values = new ContentValues();
-        values.put(KEY_COMPANY_NAME, request.getCompanyName());
-        values.put(KEY_ADDRESS, request.getAddress());
-        values.put(KEY_PHONE_NUMBER, request.getPhoneNumber());
-        values.put(KEY_EMAIL_ADDRESS, request.getEmailAddress());
-        values.put(KEY_ACTIVITY_TYPE, request.getActivityType());
-        values.put(KEY_FULL_NAME, request.getFullName());
-        values.put(KEY_DATE_OF_BIRTH, request.getDateOfBirth());
-        values.put(KEY_NATIONALITY, request.getNationality());
-        values.put(KEY_ID_NUMBER, request.getIdNumber());
-        values.put(KEY_STATE, request.getState());
-        values.put(KEY_USER_ID, request.getUserId());
-
-        if (cursor != null && cursor.moveToFirst()) {
-
-            db.update(TABLE_REQUESTS, values, KEY_USER_ID + "=? AND " + KEY_STATE + "!=?",
-                    new String[]{String.valueOf(request.getUserId()), "Rejected"});
-        } else {
-
-            db.insert(TABLE_REQUESTS, null, values);
-        }
-
-        if (cursor != null) {
-            cursor.close();
-        }
-        db.close();
-    }
 
 
 
@@ -255,6 +224,26 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
 
         return requestList;
+    }
+
+    void addRequest(Request request) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_COMPANY_NAME, request.getCompanyName());
+        values.put(KEY_ADDRESS, request.getAddress());
+        values.put(KEY_PHONE_NUMBER, request.getPhoneNumber());
+        values.put(KEY_EMAIL_ADDRESS, request.getEmailAddress());
+        values.put(KEY_ACTIVITY_TYPE, request.getActivityType());
+        values.put(KEY_FULL_NAME, request.getFullName());
+        values.put(KEY_DATE_OF_BIRTH, request.getDateOfBirth());
+        values.put(KEY_NATIONALITY, request.getNationality());
+        values.put(KEY_ID_NUMBER, request.getIdNumber());
+        values.put(KEY_STATE, request.getState());
+        values.put(KEY_USER_ID, request.getUserId());
+
+        db.insert(TABLE_REQUESTS, null, values);
+
+        db.close();
     }
 
     public Request getRequestById(int requestId) {

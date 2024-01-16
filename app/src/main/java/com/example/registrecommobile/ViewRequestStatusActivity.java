@@ -46,7 +46,7 @@ public class ViewRequestStatusActivity extends AppCompatActivity {
 
         if (userId != -1) {
 
-            Request userRequest = db.getRequestById(1);
+            Request userRequest = db.getRequestByUserId(userId);
 
 
             if (userRequest != null) {
@@ -64,17 +64,17 @@ public class ViewRequestStatusActivity extends AppCompatActivity {
     }
 
     private void displayRequestDetails(Request request) {
-        textViewRequestId.setText(R.string.requestid + " " + request.getReqId());
-        textViewCompanyName.setText(R.string.companyname + ": "+ request.getCompanyName());
-        textViewAddress.setText(R.string.address + ": " + request.getAddress());
-        textViewPhoneNumber.setText(R.string.phonenumber + ": " + request.getPhoneNumber());
-        textViewEmailAddress.setText(R.string.companyemail + ": " + request.getEmailAddress());
-        textViewActivityType.setText(R.string.typeofactivity + ": " + request.getActivityType());
-        textViewFullName.setText(R.string.fullname + ": " + request.getFullName());
-        textViewDateOfBirth.setText(R.string.dateofbirth + ": " + request.getDateOfBirth());
-        textViewNationality.setText(R.string.nationality + ": " + request.getNationality());
-        textViewIdNumber.setText(R.string.idnumber + ": " + request.getIdNumber());
-        textViewState.setText(R.string.state + ": " + request.getState());
+        textViewRequestId.setText(R.string.request + request.getReqId());
+        textViewCompanyName.setText(R.string.companyname + request.getCompanyName());
+        textViewAddress.setText(R.string.address  + request.getAddress());
+        textViewPhoneNumber.setText(R.string.phonenumber  + request.getPhoneNumber());
+        textViewEmailAddress.setText(R.string.companyemail + request.getEmailAddress());
+        textViewActivityType.setText(R.string.typeofactivity + request.getActivityType());
+        textViewFullName.setText(R.string.fullname + request.getFullName());
+        textViewDateOfBirth.setText(R.string.dateofbirth + request.getDateOfBirth());
+        textViewNationality.setText(R.string.nationality + request.getNationality());
+        textViewIdNumber.setText(R.string.idnumber + request.getIdNumber());
+        textViewState.setText(R.string.state + request.getState());
     }
 
     private void showToast(String message) {

@@ -56,8 +56,8 @@
     <string name="callexp">Call one of our expert assistants</string>
     <string name="textexp">Or text them</string>
     <string name="texthint">Hello, I need assistance with...</string>
-    <string name="call">✆</string>
-    <string name="text">✍︎</string>
+    <string name="call" translatable="false">✆</string>
+    <string name="text" translatable="false">✍︎</string>
     <string name="workhours">** Please note that our assistance center is open Sunday to Thursday from 8am to 5pm, except on holidays.</string>
     <string name="patience">** Phone lines can be busy sometimes, so your call might be put on hold.</string>
     <string name="request">Request Status for Request N°</string>

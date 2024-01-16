@@ -18,9 +18,26 @@ public class Request {
 
     }
 
+    public Request(int id, String companyName, String address, String phoneNumber,
+                   String emailAddress, String activityType, String fullName,
+                   String dateOfBirth, String nationality, String idNumber, String state, int userId) {
+        this.id = id;
+        this.companyName = companyName;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.emailAddress = emailAddress;
+        this.activityType = activityType;
+        this.fullName = fullName;
+        this.dateOfBirth = dateOfBirth;
+        this.nationality = nationality;
+        this.idNumber = idNumber;
+        this.userId = userId;
+        this.state = state;
+    }
+
     public Request(String companyName, String address, String phoneNumber,
                    String emailAddress, String activityType, String fullName,
-                   String dateOfBirth, String nationality, String idNumber, int userId, String state) {
+                   String dateOfBirth, String nationality, String idNumber, String state, int userId) {
         this.companyName = companyName;
         this.address = address;
         this.phoneNumber = phoneNumber;

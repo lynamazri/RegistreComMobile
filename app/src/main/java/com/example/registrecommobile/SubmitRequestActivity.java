@@ -59,14 +59,6 @@ public class SubmitRequestActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("user_session", MODE_PRIVATE);
         int userId = sharedPreferences.getInt("USER_ID", -1);
 
-        if (userId == -1) {
-            showToast("User session expired. Please log in again.");
-            startActivity(new Intent(this, MainActivity.class));
-            finish();
-            return;
-        }
-
-
         String companyName = editTextCompanyName.getText().toString();
         String address = editTextAddress.getText().toString();
         String phoneNumber = editTextPhoneNumber.getText().toString();
@@ -78,29 +70,48 @@ public class SubmitRequestActivity extends AppCompatActivity {
         String idNumber = editTextIdNumber.getText().toString();
         boolean declarationChecked = checkBoxDeclaration.isChecked();
 
+        if (userId != -1) {
 
-        if (companyName.isEmpty() || address.isEmpty() || phoneNumber.isEmpty() ||
-                emailAddress.isEmpty() || activityType.isEmpty() || fullName.isEmpty() ||
-                dateOfBirth.isEmpty() || nationality.isEmpty() || idNumber.isEmpty() ||
-                !declarationChecked) {
-            showToast("Please fill in all mandatory fields and accept the declaration.");
-            return;
+            if (companyName.isEmpty() || address.isEmpty() || phoneNumber.isEmpty() ||
+                    emailAddress.isEmpty() || activityType.isEmpty() || fullName.isEmpty() ||
+                    dateOfBirth.isEmpty() || nationality.isEmpty() || idNumber.isEmpty() ||
+                    !declarationChecked) {
+                showToast("Please fill in all mandatory fields and accept the declaration.");
+            } else {
+
+                DatabaseHandler db = new DatabaseHandler(this);
+
+                Request existingRequest = db.getRequestByUserId(userId);
+
+                if (existingRequest != null) {
+                    showToast("Cannot submit another request. You already have a pending request.");
+                    startActivity(new Intent(SubmitRequestActivity.this, ViewRequestStatusActivity.class));
+                } else {
+                    Request newRequest = new Request(companyName, address, phoneNumber, emailAddress,
+                            activityType, fullName, dateOfBirth, nationality, idNumber, "Submitted for review", userId);
+
+
+                    db.addRequest(newRequest);
+
+                    showToast("Request submitted successfully");
+                    finish();
+                }
+
+
+
+            }
+
+        } else {
+            showToast("User session expired. Please log in again.");
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
         }
-        DatabaseHandler db = new DatabaseHandler(this);
-        Request existingRequest = db.getRequestByUserId(userId);
-        if (existingRequest != null) {
-            showToast("Cannot submit another request. You already have a pending request.");
-            return;
-        }
-
-        Request newRequest = new Request(companyName, address, phoneNumber, emailAddress,
-                activityType, fullName, dateOfBirth, nationality, idNumber, userId, "Submitted");
 
 
-        db.addRequest(newRequest);
 
-        showToast("Request submitted successfully");
-        finish();
+
+
+
     }
 
 
