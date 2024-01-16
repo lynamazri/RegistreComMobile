@@ -108,6 +108,8 @@
                 android:layout_marginTop="10dp"
                 android:padding="5dp"
                 android:hint="@string/dateofbirth"
+                android:focusable="false"
+                android:clickable="true"
                 android:background="@drawable/custom_edittext2"
                 android:inputType="date"/>
 

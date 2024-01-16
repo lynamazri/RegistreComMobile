@@ -61,4 +61,8 @@
     <string name="workhours">** Veuillez noter que notre centre d\'assistance est ouvert du dimanche au jeudi de 8h à 17h, sauf les jours fériés.</string>
     <string name="patience">** Les lignes téléphoniques peuvent parfois être occupées, votre appel peut donc être mis en attente.</string>
     <string name="request">Statut de traitement pour la demande N°</string>
+    <string name="pending">En attente : la demande a été soumise avec succès et est en attente d\'être examinée.</string>
+    <string name="examen">En cours d\'examen : la demande est en cours d\'examen.</string>
+    <string name="accepted">Accepté : la demande a été approuvée. Merci de vous rendre auprès des autorités concernées pour récupérer votre registre.</string>
+    <string name="rejected">Rejeté : la demande a été rejetée. Veuillez vous rendre dans la section « Contact » pour plus d\'informations.</string>
 </resources>

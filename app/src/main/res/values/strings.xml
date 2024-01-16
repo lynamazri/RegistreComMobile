@@ -61,4 +61,8 @@
     <string name="workhours">** Please note that our assistance center is open Sunday to Thursday from 8am to 5pm, except on holidays.</string>
     <string name="patience">** Phone lines can be busy sometimes, so your call might be put on hold.</string>
     <string name="request">Request Status for Request N°</string>
+    <string name="pending">Pending: Request has been submitted succesfully and is waiting to be reviewed.</string>
+    <string name="examen">Under Review: Request is being reviewed.</string>
+    <string name="accepted">Accepted: Request has been approved. Please head to the concerned authorities to collect your register.</string>
+    <string name="rejected">Rejected: Request has been rejected. Please head over to the \'Contact\' section for further inquiries.</string>
 </resources>
